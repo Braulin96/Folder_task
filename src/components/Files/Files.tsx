@@ -14,7 +14,7 @@ const Files = ({ fileType, name, dateAdded, onClick }: Props) => {
       <p className="text-gray-800 text-[16px] mt-[40px]">{name}</p>
       <div className="flex justify-between  w-full mt-auto mb-[8px] px-[8px]">
         <p className="text-gray-600 text-[12px]">{dateAdded}</p>
-        <p className="text-gray-600 text-[12px]">{fileType}</p>
+        <p className="text-gray-600 text-[12px]">.{fileType}</p>
       </div>
     </li>
   );

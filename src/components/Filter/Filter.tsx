@@ -25,7 +25,8 @@ const Filter = ({ filters, selectedFilter, setSelectedFilter }: Props) => {
         onClick={handleOpenFilter}
         className=" bg-gray-600 rounded-[8px] flex px-[12px] py-[8px] gap-x-[4px] hover:bg-gray-500 transition-all duration-500">
         <p className="text-[12px] text-gray-100 font-semibold">
-          {selectedFilter || "Select Filter"}
+          <span className="mr-[2px]">Sort by:</span>
+          {selectedFilter || ""}
         </p>
         <img src={FilterImage} alt="filter" className="rotate-90 size-[20px]" />
       </button>
