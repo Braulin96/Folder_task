@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { memo } from "react";
 
-import DocImage from "../../assets/icons/doc.svg";
-import MovieImage from "../../assets/icons/movie.svg";
+import DocImage from "assets/icons/doc.svg";
+import MovieImage from "assets/icons/movie.svg";
 
 type Props = {
   fileType?: string;

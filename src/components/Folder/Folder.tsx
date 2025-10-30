@@ -1,6 +1,6 @@
 import { useCallback, memo } from "react";
 
-import FolderBackground from "../../assets/icons/folder.svg";
+import FolderBackground from "assets/icons/folder.svg";
 
 type Props = {
   id: string | number;

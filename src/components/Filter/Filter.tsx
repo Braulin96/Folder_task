@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
-import FilterImage from "../../assets/icons/filter.svg";
+
+import FilterImage from "assets/icons/filter.svg";
 
 type Props = {
   filters: string[];

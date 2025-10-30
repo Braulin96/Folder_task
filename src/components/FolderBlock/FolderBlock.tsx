@@ -1,12 +1,13 @@
 import { useState, useMemo, useCallback } from "react";
-import Files from "../Files/Files";
-import Folder from "../Folder/Folder";
-import Filter from "../Filter/Filter";
 
-import { MOCK_FOLDER_DATA } from "../../data/folderData";
-import { FILTER_OPTIONS } from "../../data/filterOptions";
+import Files from "components/Files/Files";
+import Folder from "components/Folder/Folder";
+import Filter from "components/Filter/Filter";
 
-import PrevArrow from "../../assets/icons/prev.svg";
+import { MOCK_FOLDER_DATA } from "data/folderData";
+import { FILTER_OPTIONS } from "data/filterOptions";
+
+import PrevArrow from "assets/icons/prev.svg";
 
 const FolderBlock = () => {
   const [isOpen, setIsOpen] = useState(false);
