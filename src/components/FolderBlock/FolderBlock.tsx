@@ -6,6 +6,8 @@ import Filter from "../Filter/Filter";
 import { MOCK_FOLDER_DATA } from "../../data/folderData";
 import { FILTER_OPTIONS } from "../../data/filterOptions";
 
+import PrevArrow from "../../assets/icons/prev.svg";
+
 const FolderBlock = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedFolderIndex, setSelectedFolderIndex] = useState<number | null>(
@@ -56,8 +58,13 @@ const FolderBlock = () => {
           <button
             onClick={closeFolder}
             aria-label="back button"
-            className="text-[14px] text-gray-200 underline w-fit">
-            Back
+            className="text-[14px] text-gray-200 underline w-fit group">
+            <img
+              src={PrevArrow}
+              alt="previous arrow"
+              className="inline-block size-[14px] mr-[2px] group-hover:translate-x-[-2px] transition-all duration-500"
+            />
+            <span>Back</span>
           </button>
 
           <Filter
