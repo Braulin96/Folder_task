@@ -1,14 +1,15 @@
-import React, { useCallback } from "react";
+import { useCallback, memo } from "react";
+
 import FolderBackground from "../../assets/icons/folder.svg";
 
 type Props = {
   id: string | number;
   name?: string;
-  onOpen?: (id: string) => void;
+  onOpen?: (id: number) => void;
 };
 
 const Folder = ({ id, name, onOpen }: Props) => {
-  const handleClick = useCallback(() => onOpen?.(id), [onOpen, id]);
+  const handleClick = useCallback(() => onOpen?.(id as number), [onOpen, id]);
 
   return (
     <button
@@ -25,4 +26,4 @@ const Folder = ({ id, name, onOpen }: Props) => {
   );
 };
 
-export default React.memo(Folder);
+export default memo(Folder);
