@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 
+import Button from "components/Button/Button";
+
 import FilterImage from "assets/icons/filter.svg";
 
 type Props = {
@@ -36,14 +38,11 @@ const Filter = ({ filters, selectedFilter, setSelectedFilter }: Props) => {
 
   return (
     <section ref={ref} className="relative">
-      <button
+      <Button
         onClick={handleOpenFilter}
-        className=" bg-dark-gray-600 rounded-[8px] flex px-[12px] py-[8px] gap-x-[4px] hover:bg-gray-500 transition-all duration-500 min-w-[90px] justify-between items-center">
-        <p className="text-[12px] text-light-gray-100 font-semibold">
-          {selectedFilter || "Sort by"}
-        </p>
-        <img src={FilterImage} alt="filter" className="rotate-90 size-[20px]" />
-      </button>
+        text={selectedFilter || "Sort by"}
+        icon={FilterImage}
+      />
       {isOpen && (
         <ul className="mt-[8px] bg-gray-500 rounded-[8px] shadow-lg p-[8px] flex flex-col gap-y-[4px] absolute z-10 w-full">
           {filters?.map((filter, index) => (
