@@ -35,7 +35,7 @@ const FolderBlock = () => {
       <section
         hidden={isOpen}
         aria-label="folders section"
-        aria-hidden={isOpen}
+        // aria-hidden={isOpen}
         className="p-[30px]">
         <div className="flex flex-wrap gap-[10px]">
           {folderData.map((folder, index) => (
@@ -51,7 +51,7 @@ const FolderBlock = () => {
 
       <section
         hidden={!isOpen}
-        aria-hidden={!isOpen}
+        // aria-hidden={!isOpen}
         className={`${
           isOpen ? "flex" : "hidden"
         } flex-col p-[30px] gap-y-[8px]`}>
