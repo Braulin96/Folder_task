@@ -1,14 +1,14 @@
 import "./App.css";
 
-import Files from "./components/Files/Files";
-import Folder from "./components/Folder/Folder";
 import FolderBlock from "./components/FolderBlock/FolderBlock";
+import UserFetcher from "components/UserFetcher/UserFetcher";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <FolderBlock />
+        <UserFetcher />
       </header>
     </div>
   );

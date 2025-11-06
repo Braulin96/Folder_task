@@ -3,27 +3,26 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import Counter from "./Counter";
 
 describe("Counter component", () => {
-  it("should increment the value when click the increment button", () => {
+  it("should render count", () => {
     render(<Counter />);
-    const incrementButton = screen.getByText(/Increment/i);
+    expect(screen.getByText(/Count: 0/i)).toBeInTheDocument();
+  });
+
+  it("should increment when click in increment button", () => {
+    render(<Counter />);
+    const incrementButton = screen.getByRole("button", { name: "Increment" });
     fireEvent.click(incrementButton);
     const count = screen.getByText("Count: 1");
     expect(count).toBeInTheDocument();
   });
 
-  it("should decrement the value when click in decrement button", () => {
+  it("should decrement when click on decrement button", () => {
     render(<Counter />);
-    const decrementButton = screen.getByText(/Decrement/i);
+    const decrementButton = screen.getByRole("button", { name: "Decrement" });
     fireEvent.click(decrementButton);
-    const count = screen.getByText("Count: -1");
-    expect(count).toBeInTheDocument();
-  });
-
-  it("should reset when click in reset button", () => {
-    render(<Counter />);
-    const resetButton = screen.getByText(/Reset/i);
-    fireEvent.click(resetButton);
-    const count = screen.getByText("Count: 0");
-    expect(count).toBeInTheDocument();
+    const newCount = screen.getByText("Count: -1");
+    const oldCount = screen.queryByText("Count: 0");
+    expect(newCount).toBeInTheDocument();
+    expect(oldCount).not.toBeInTheDocument();
   });
 });
